@@ -1,0 +1,39 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./colors.scss";
+@import "./typography.scss";
+@import "./animations.scss";
+
+@import "./vscode-screen/vscode-screen.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $dark;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("/public/bg-gradient-circle.png");
+  background-attachment: fixed;
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.vector-1 {
+  z-index: -1;
+  position: fixed;
+  top: -50%;
+  right: -500px;
+  @media screen and (max-width: 728px) {
+    top: -90%;
+    left: -100%;
+    transform: translateX(50%) scale(0.5);
+  }
+}
