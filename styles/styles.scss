@@ -4,6 +4,7 @@
 @import "./animations.scss";
 
 @import "./vscode-screen/vscode-screen.scss";
+@import "./card-perfil/card-perfil.scss";
 
 * {
   padding: 0;
@@ -17,23 +18,38 @@ body {
 }
 
 .home {
+  position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url("/public/bg-gradient-circle.png");
-  background-attachment: fixed;
-  background-position: top left;
-  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.bg-gradient-blue {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
 }
 
 .vector-1 {
   z-index: -1;
-  position: fixed;
-  top: -50%;
+  position: absolute;
+  bottom: 10%;
   right: -500px;
   @media screen and (max-width: 728px) {
-    top: -90%;
+    top: -110%;
     left: -100%;
     transform: translateX(50%) scale(0.5);
+  }
+}
+
+.card-perfil-social-icon {
+  color: #fff;
+  transition: .8s;
+  &:hover {
+    color: #05FF00;
+    transform: translateY(-10px);
+    transition: .2s;
   }
 }
