@@ -1,11 +1,20 @@
 import { Col, Container, Row } from "react-bootstrap";
 import CardPerfil from "../components/card-perfil";
 import VscodeScreen from "../components/vscode-screen";
+import Konami from "react-konami-code";
 
 export default function Home({ user }) {
-  console.log(user);
+  console.log("Obrigado por visitar o meu site!");
+
+  const easterEgg = () => {
+    alert("teste");
+  };
+
   return (
     <>
+      <Konami>
+        <span className="text-light">Konami code</span>
+      </Konami>
       <section>
         <Container fluid className="home">
           <img
@@ -39,7 +48,14 @@ export default function Home({ user }) {
       </section>
 
       <section>
-        <Container fluid className="py-5">
+        <Container fluid className="py-5 position-relative">
+          <img
+            draggable={false}
+            className="playstation rotate-center-play"
+            src="/svgs/playstation.svg"
+            alt="playstation"
+            title="↑↑↓↓←→←→BA"
+          />
           <Container className="py-5">
             <Row className="d-flex align-items-center">
               <Col className="col-12 col-lg-4">

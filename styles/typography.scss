@@ -18,7 +18,9 @@
   font-weight: 700;
   font-size: 4rem;
   line-height: auto;
-  color: #fe3816;
+  background: -webkit-linear-gradient(45deg,#FF3D00 0%, #FA00FF 50%, #6100FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   @media screen and (max-width: 728px) {
     font-size: 2rem;
   }

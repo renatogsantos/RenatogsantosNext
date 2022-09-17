@@ -38,18 +38,19 @@ body {
   bottom: 10%;
   right: -500px;
   @media screen and (max-width: 728px) {
-    top: -110%;
-    left: -100%;
+    bottom: 40%;
+    right: -300px;
     transform: translateX(50%) scale(0.5);
   }
 }
 
-.card-perfil-social-icon {
-  color: #fff;
-  transition: .8s;
-  &:hover {
-    color: #05FF00;
-    transform: translateY(-10px);
-    transition: .2s;
+.playstation {
+  position: absolute;
+  right: 100px;
+  top: -100px;
+  width: 15%;
+  @media screen and (max-width: 728px) {
+    right: 20px;
+    top: -50px;
   }
 }

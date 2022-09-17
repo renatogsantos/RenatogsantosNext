@@ -21,3 +21,63 @@
   width: 80px;
   height: 80px;
 }
+
+.card-perfil-social-icon-github {
+  color: #fff;
+  transition: .8s;
+  &:hover {
+    color: #00b7ff;
+    transform: translateY(-8px);
+    transition: .2s;
+  }
+}
+
+.card-perfil-social-icon-linkedin {
+  color: #fff;
+  transition: .8s;
+  &:hover {
+    color: #0084ff;
+    transform: translateY(-8px);
+    transition: .2s;
+  }
+}
+
+.card-perfil-social-icon-instagram {
+  color: #fff;
+  transition: .8s;
+  &:hover {
+    color: #ff00ff;
+    transform: translateY(-8px);
+    transition: .2s;
+  }
+}
+
+.card-perfil-social-icon-twitter {
+  color: #fff;
+  transition: .8s;
+  &:hover {
+    color: #00a2ff;
+    transform: translateY(-8px);
+    transition: .2s;
+  }
+}
+
+.card-perfil-social-icon-discord {
+  color: #fff;
+  transition: .8s;
+  &:hover {
+    color: #7700ff;
+    transform: translateY(-8px);
+    transition: .2s;
+  }
+}
+
+.card-perfil-social-icon-whatsapp {
+  color: #fff;
+  transition: .8s;
+  &:hover {
+    color: #05FF00;
+    transform: translateY(-8px);
+    transition: .2s;
+  }
+}
