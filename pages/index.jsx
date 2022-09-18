@@ -2,18 +2,43 @@ import { Col, Container, Row } from "react-bootstrap";
 import CardPerfil from "../components/card-perfil";
 import VscodeScreen from "../components/vscode-screen";
 import Konami from "react-konami-code";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useForm } from "react-hook-form";
 
-export default function Home({ user }) {
-  console.log("Obrigado por visitar o meu site!");
+export default function Home({ user, repos }) {
+  const [post, setPost] = useState();
+  const URL = "/api/hello";
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
   const easterEgg = () => {
     alert("teste");
   };
 
+  useEffect(() => {
+    axios.get(URL).then((response) => {
+      setPost(response.data);
+    });
+  }, []);
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
     <>
       <Konami>
-        <span className="text-light">Konami code</span>
+        <img
+          draggable={false}
+          className="mario"
+          src="/mario-gif.gif"
+          alt="mario world"
+        />
       </Konami>
       <section>
         <Container fluid className="home">
@@ -35,7 +60,14 @@ export default function Home({ user }) {
               <Col className="col-12 col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
                 <span className="text-light">{user.name}</span>
                 <h1 className="title-one">Desenvolvedor</h1>
-                <h2 className="title-two">Front-End</h2>
+                <h2 className="title-two">Web Front-End</h2>
+                {/* <form onSubmit={handleSubmit(onSubmit)}>
+                  <div className="d-flex flex-column align-items-start">
+                    <input name="name" type="text" {...register("name")} />
+                    <input name="post" type="text" {...register("post")} />
+                    <button type="submit">Enviar post</button>
+                  </div>
+                </form> */}
               </Col>
               <Col className="col-12 col-lg-6 order-1 order-lg-2 d-flex align-items-center">
                 <div className="position-relative w-100 d-flex align-items-center">
@@ -84,17 +116,36 @@ export default function Home({ user }) {
           </Container>
         </Container>
       </section>
+
+      {/* <section>
+        <Container fluid>
+          <Container>
+            {repos.map((item, index) => {
+              return (
+                <ul key={index}>
+                  <li>{item.name}</li>
+                </ul>
+              );
+            })}
+          </Container>
+        </Container>
+      </section> */}
     </>
   );
 }
 
 export const getStaticProps = async () => {
-  const response = await fetch("https://api.github.com/users/renatogsantos");
-  const data = await response.json();
+  const userGit = await fetch("https://api.github.com/users/renatogsantos");
+  const user = await userGit.json();
+  const reposGit = await fetch(
+    "https://api.github.com/users/renatogsantos/repos"
+  );
+  const repos = await reposGit.json();
 
   return {
     props: {
-      user: data,
+      user: user,
+      repos: repos,
     },
     revalidate: 60 * 60 * 24,
   };

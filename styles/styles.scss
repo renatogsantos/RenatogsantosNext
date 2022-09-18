@@ -13,7 +13,11 @@
 }
 
 body {
-  background: $dark;
+  background: url("/background.png"), $dark;
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: "Montserrat Alternates", sans-serif;
 }
 
@@ -36,7 +40,7 @@ body {
   z-index: -1;
   position: absolute;
   bottom: 10%;
-  right: -500px;
+  right: -300px;
   @media screen and (max-width: 728px) {
     bottom: 40%;
     right: -300px;
@@ -53,4 +57,11 @@ body {
     right: 20px;
     top: -50px;
   }
+}
+
+.mario {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  width: 80px;
 }
