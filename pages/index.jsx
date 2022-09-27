@@ -50,12 +50,6 @@ export default function Home({ user, repos }) {
             height="90%"
           />
           <Container className="block-1">
-            <img
-              draggable={false}
-              src="/svgs/bg-hero-1.svg"
-              className="rotate-center vector-1"
-              alt="vetor gráfico"
-            />
             <Row>
               <Col className="col-12 col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
                 <span className="text-light">{user.name}</span>
@@ -72,6 +66,12 @@ export default function Home({ user, repos }) {
               <Col className="col-12 col-lg-6 order-1 order-lg-2 d-flex align-items-center">
                 <div className="position-relative w-100 d-flex align-items-center">
                   <VscodeScreen />
+                  <img
+                    draggable={false}
+                    src="/svgs/bg-hero-1.svg"
+                    className="rotate-center vector-1"
+                    alt="vetor gráfico"
+                  />
                 </div>
               </Col>
             </Row>
@@ -90,11 +90,17 @@ export default function Home({ user, repos }) {
           />
           <Container className="py-5">
             <Row className="d-flex align-items-center">
-              <Col className="col-12 col-lg-4">
+              <Col className="col-12 col-lg-4 position-relative">
                 <CardPerfil
                   avatar={user.avatar_url}
                   name={user.name}
                   bio={user.bio}
+                />
+                <img
+                  draggable={false}
+                  src="/svgs/bg-hero-1.svg"
+                  className="vector-2"
+                  alt="vetor gráfico"
                 />
               </Col>
               <Col className="col-12 col-lg-8 p-3 d-flex flex-column align-items-center justify-content-center">
