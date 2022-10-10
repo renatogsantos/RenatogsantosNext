@@ -5,6 +5,7 @@ import Konami from "react-konami-code";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import MouseWheel from "../components/MouseWheel";
 
 export default function Home({ user, repos }) {
   const [post, setPost] = useState();
@@ -122,20 +123,7 @@ export default function Home({ user, repos }) {
           </Container>
         </Container>
       </section>
-
-      {/* <section>
-        <Container fluid>
-          <Container>
-            {repos.map((item, index) => {
-              return (
-                <ul key={index}>
-                  <li>{item.name}</li>
-                </ul>
-              );
-            })}
-          </Container>
-        </Container>
-      </section> */}
+      <MouseWheel />
     </>
   );
 }
