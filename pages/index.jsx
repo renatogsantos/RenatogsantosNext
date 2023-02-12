@@ -55,7 +55,7 @@ export default function Home({ user, repos }) {
               <Col className="col-12 col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
                 <span className="text-light">{user.name}</span>
                 <h1 className="title-one">Desenvolvedor</h1>
-                <h2 className="title-two">Web Front-End</h2>
+                <h2 className="title-two">Web Front-End & Designer UX /UI</h2>
                 {/* <form onSubmit={handleSubmit(onSubmit)}>
                   <div className="d-flex flex-column align-items-start">
                     <input name="name" type="text" {...register("name")} />
